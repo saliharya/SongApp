@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-const SongItem = ({ song, isFavorite, onToggleFavorite, onPress }) => {
+const SongItem = ({ song, isFavorite, onToggleFavorite, onPress, showFavoriteButton = true }) => {
     const handleToggleFavorite = () => {
         onToggleFavorite(song);
     };
@@ -12,10 +12,12 @@ const SongItem = ({ song, isFavorite, onToggleFavorite, onPress }) => {
             <View style={styles.info}>
                 <Text style={styles.title}>{song.trackName}</Text>
                 <Text style={styles.artist}>{song.artistName}</Text>
-                <Button
-                    title={isFavorite ? "Unfavorite" : "Favorite"}
-                    onPress={handleToggleFavorite}
-                />
+                {showFavoriteButton && (
+                    <Button
+                        title={isFavorite ? "Unfavorite" : "Favorite"}
+                        onPress={handleToggleFavorite}
+                    />
+                )}
             </View>
         </TouchableOpacity>
     );

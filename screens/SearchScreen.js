@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { View, TextInput, Button, SectionList, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react';
+import { View, TextInput, Button, SectionList, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-ionicons'
 import itunesApi from '../api/itunesApi';
 import SongItem from '../components/SongItem';
 import { FavoritesContext } from '../contexts/FavoritesContext';
@@ -35,6 +36,16 @@ const SearchScreen = ({ navigation }) => {
         title: artist,
         data: groupedSongs[artist]
     }));
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity style={styles.favoriteButton} onPress={() => navigation.navigate('Favorites')}>
+                    <Icon name="heart-outline" size={24} color="black" />
+                </TouchableOpacity>
+            ),
+        });
+    }, [navigation]);
 
     return (
         <View style={styles.container}>
@@ -88,6 +99,10 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 18,
         fontWeight: 'bold',
+    },
+    favoriteButton: {
+        marginRight: 10,
+        padding: 10,
     },
 });
 
