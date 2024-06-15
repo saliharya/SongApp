@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, TextInput, Button, SectionList, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import itunesApi from '../api/itunesApi';
-import SongItem from '../components/SongItem';
+import { View, TextInput, Button, SectionList, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { FavoritesContext } from '../contexts/FavoritesContext';
+import { SearchScreenStyle as styles } from '../styles/SearchScreenStyle';
+import SongItem from '../components/SongItem';
+import itunesApi from '../api/itunesApi';
 
 const SearchScreen = ({ navigation }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -80,30 +81,5 @@ const SearchScreen = ({ navigation }) => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-    },
-    input: {
-        marginBottom: 10,
-        padding: 10,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        borderRadius: 5,
-    },
-    header: {
-        padding: 5,
-        backgroundColor: '#f4f4f4',
-    },
-    headerText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    favoriteButton: {
-        marginRight: 10,
-        padding: 10,
-    },
-});
 
 export default SearchScreen;
