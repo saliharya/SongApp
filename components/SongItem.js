@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Button, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { SongItemStyle as styles } from '../styles/SongItemStyle';
 
 const SongItem = ({ song, isFavorite, onToggleFavorite, onPress, showFavoriteButton = true }) => {
     const handleToggleFavorite = () => {
@@ -22,31 +23,5 @@ const SongItem = ({ song, isFavorite, onToggleFavorite, onPress, showFavoriteBut
         </TouchableOpacity>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        padding: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
-    },
-    image: {
-        width: 50,
-        height: 50,
-        marginRight: 10,
-    },
-    info: {
-        flex: 1,
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    artist: {
-        fontSize: 14,
-        color: '#666',
-    },
-});
 
 export default SongItem;
