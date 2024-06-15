@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { View, TextInput, Button, SectionList, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import itunesApi from '../api/itunesApi';
 import SongItem from '../components/SongItem';
 import { FavoritesContext } from '../contexts/FavoritesContext';
@@ -41,7 +41,7 @@ const SearchScreen = ({ navigation }) => {
         navigation.setOptions({
             headerRight: () => (
                 <TouchableOpacity style={styles.favoriteButton} onPress={() => navigation.navigate('Favorites')}>
-                    <Icon name="heart-outline" size={24} color="black" />
+                    <Ionicons name="heart" size={24} color="red" />
                 </TouchableOpacity>
             ),
         });
