@@ -8,8 +8,8 @@ export const SongItemStyle = StyleSheet.create({
         borderBottomColor: '#ccc',
     },
     image: {
-        width: 50,
-        height: 50,
+        width: 100,
+        height: 100,
         marginRight: 10,
     },
     info: {
@@ -19,9 +19,11 @@ export const SongItemStyle = StyleSheet.create({
     title: {
         fontSize: 16,
         fontWeight: 'bold',
+        paddingBottom: 10,
     },
     artist: {
         fontSize: 14,
         color: '#666',
+        paddingBottom: 10,
     },
 })
