@@ -52,6 +52,7 @@ const SearchScreen = ({ navigation }) => {
         <View style={styles.container}>
             <TextInput
                 placeholder="Search by song or artist"
+                placeholderTextColor="#888"
                 value={searchTerm}
                 onChangeText={setSearchTerm}
                 style={styles.input}
