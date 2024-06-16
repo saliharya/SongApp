@@ -20,6 +20,7 @@ export const SongItemStyle = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         paddingBottom: 10,
+        color: '#000'
     },
     artist: {
         fontSize: 14,

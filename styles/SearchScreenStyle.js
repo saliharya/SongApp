@@ -10,6 +10,7 @@ export const SearchScreenStyle = StyleSheet.create({
         borderColor: '#ccc',
         borderWidth: 1,
         borderRadius: 5,
+        color: '#000',
     },
     header: {
         padding: 5,
@@ -23,4 +24,10 @@ export const SearchScreenStyle = StyleSheet.create({
         marginRight: 10,
         padding: 10,
     },
-})
+    noResultsText: {
+        textAlign: 'center',
+        fontSize: 16,
+        color: '#888',
+        marginTop: 20,
+    },
+});

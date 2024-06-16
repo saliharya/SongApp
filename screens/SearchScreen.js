@@ -60,6 +60,8 @@ const SearchScreen = ({ navigation }) => {
             <Button title="Search" onPress={searchSongs} />
             {loading ? (
                 <ActivityIndicator size="large" color="#0000ff" />
+            ) : songs.length === 0 ? (
+                <Text style={styles.noResultsText}>No songs found</Text>
             ) : (
                 <SectionList
                     sections={sections}
