@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Button, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { SongItemStyle as styles } from '../styles/SongItemStyle';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const SongItem = ({ song, isFavorite, onToggleFavorite, onPress, showFavoriteButton = true }) => {
     const handleToggleFavorite = () => {
@@ -14,10 +15,13 @@ const SongItem = ({ song, isFavorite, onToggleFavorite, onPress, showFavoriteBut
                 <Text style={styles.title}>{song.trackName}</Text>
                 <Text style={styles.artist}>{song.artistName}</Text>
                 {showFavoriteButton && (
-                    <Button
-                        title={isFavorite ? "Unfavorite" : "Favorite"}
-                        onPress={handleToggleFavorite}
-                    />
+                    <TouchableOpacity style={styles.favoriteButton} onPress={handleToggleFavorite}>
+                        {isFavorite ? (
+                            <Ionicons name="heart" size={24} color="red" />
+                        ) : (
+                            <Ionicons name="heart-outline" size={24} color="black" />
+                        )}
+                    </TouchableOpacity>
                 )}
             </View>
         </TouchableOpacity>
